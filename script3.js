@@ -1,21 +1,11 @@
 function confirmExit() {
   var exit = confirm("Você realmente deseja sair?");
   if (exit) {
-    window.location.href = 'main.html';
+    window.location.href = 'login.php';
   }
 }
 
-function login(){
-    window.location.href = 'cameras.html'
-
-}
-
-function openModal(modalId) {
-    var modal = document.getElementById(modalId);
-    modal.style.display = "block";
-  }
   
-  // This should be the only global code
   window.onclick = function(event) {
     if (event.target.classList.contains('modal')) {
       event.target.style.display = "none";
@@ -26,3 +16,18 @@ function openModal(modalId) {
       }
     }
   }
+
+async function startWebcam() {
+    const video = document.getElementById('camera1');
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        video.srcObject = stream;
+    } catch (error) {
+        console.error("Erro ao acessar a câmera:", error);
+    }
+}
+
+window.onload = () => {
+  console.log("Página carregada. Iniciando webcam...");
+  startWebcam();
+};

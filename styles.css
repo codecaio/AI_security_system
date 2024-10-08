@@ -85,21 +85,21 @@ body {
   margin-bottom: 10px;
   }
 
-  .icon-container {
+.icon-container {
       text-align: center;
       margin-bottom: 10px;
   }
   
-  .user-icon {
+.user-icon {
       font-size: 80px;
       color: #646464;
   }
   
-  .user-icon.error {
+.user-icon.erro {
       color: red;
   }
   
-  .error-message {
+.error-message {
       color: red;
       font-size: 14px;
       text-align: center;

@@ -13,15 +13,8 @@
 
     $result = $conexao->query($sql);
 
+    header('Location: login.php');
 
-    if(mysqli_num_rows($result) < 1)
-    {
-      print_r("Não existe");
-    }
-    else
-    {
-      print_r("Existe");
-    }
 
     $conexao->close();
 
